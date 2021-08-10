@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+}
+
+.header {
+
+    height: 64px;
+    background-color: #032541 ;
+}
+
+.header__search {
+    display: none;
+}
+
+
+
+div.welcome-banner {
+    height: 284px;
+    background-color: rgb(127, 169, 184);
+    color: white;
+}
+
+
+.movies-container {
+    width: 100%;
+    height: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #032541 ;
+    height: 200px;
+}
