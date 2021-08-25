@@ -15,7 +15,7 @@ export const buttonBanner = document.getElementById("button_banner")
 // Form EventListener
 export const formEventListener = form.addEventListener('submit', resultsSearching);
 
-//functions
+//Functions
 export function searchInfo(e){
   e.preventDefault()
   const userSearch = formInput.value;
@@ -167,3 +167,9 @@ export function movieSelected(e){
 
 
 }
+
+
+function  clearHtml(){
+  mainContainer.innerHTML="";
+}
+
