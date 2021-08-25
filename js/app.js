@@ -13,7 +13,7 @@ export const  formInput = document.getElementById("form__banner-search")
 export const buttonBanner = document.getElementById("button_banner")
 
 // Form EventListener
-export const formEventListener = form.addEventListener('submit', resultsSearching);
+export const formEventListener = form.addEventListener('submit', searchInfo);
 
 //Functions
 export function searchInfo(e){
