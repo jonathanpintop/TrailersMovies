@@ -55,6 +55,51 @@ function showMovies(data) {
 
     let date = new Date(release_date);
 
+    const month = date.getMonth();
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    const monthFormatReady = monthFormat(month);
+
+    function monthFormat(month) {
+      if (month === 1) {
+        return "Jan";
+      }
+      if (month === 2) {
+        return "Feb";
+      }
+      if (month === 3) {
+        return "Mar";
+      }
+      if (month === 4) {
+        return "Apr";
+      }
+      if (month === 5) {
+        return "May";
+      }
+      if (month === 6) {
+        return "Jun";
+      }
+      if (month === 7) {
+        return "Jul";
+      }
+      if (month === 8) {
+        return "Aug";
+      }
+      if (month === 9) {
+        return "Sept";
+      }
+      if (month === 10) {
+        return "Oct";
+      }
+      if (month === 11) {
+        return "Nov";
+      }
+      if (month === 12) {
+        return "Dic";
+      }
+    }
+
     const movieCard = document.createElement("div");
     movieCard.classList.add("movie");
     movieCard.innerHTML = `
@@ -70,7 +115,7 @@ function showMovies(data) {
               <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="movie__date">
-             ${date}
+             ${monthFormatReady} ${day},${year}
             </div>
             `;
     mainContainer.appendChild(movieCard);
