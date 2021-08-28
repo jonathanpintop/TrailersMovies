@@ -45,7 +45,6 @@ function moviesApi(url) {
       showMovies(data.results);
     });
 }
-
 function showMovies(data) {
   data.forEach((movie) => {
     const { title, poster_path, vote_average, overview, release_date, id } =
@@ -111,8 +110,10 @@ function showMovies(data) {
             </a>
 
             <div class="movie__info">
+            <div class="${getColor(vote_average)}">
+            <span >${vote_average}</span>
+            </div>
               <h3 class="movie__info--title" data-id= "${movieId}">${title}</h3>
-              <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
             <div class="movie__date">
              ${monthFormatReady} ${day},${year}

@@ -37,9 +37,11 @@ function movieSelectedApi(url) {
 function showMovieSelected(data) {
   const { title, poster_path, vote_average, overview, release_date, id } = data;
 
+  const hideBanner = document.getElementById("welcome-banner").style.display = "none";
+
   const movieSelectedCard = document.createElement("div");
 
-  movieSelectedCard.innerHTML = `
+  movieSelectedCard.innerHTML = ` 
 
 
 <img data-id= "${id}" class="movie__img--selected"  src="${
