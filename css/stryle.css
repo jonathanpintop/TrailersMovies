@@ -192,9 +192,16 @@ div.welcome-banner {
 
 
 
+.button_loadMore {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
 
-
-
+}
 
 
 .footer {

@@ -1,9 +1,22 @@
 // TMDB getting information  from the api
 
+const app = {
+  page: 1,
+};
+
 export const apiKey = "07b870c21213848a4a5f99985d44b475";
 const mainUrl = "https://api.themoviedb.org/3";
-const apiUrl =
-  mainUrl + "/discover/movie?sort_by=popularity.desc&api_key=" + apiKey;
+
+const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=07b870c21213848a4a5f99985d44b475&language=en-US&page=1
+`;
+
+function pageNumber() {
+  app.page = app.page + 1;
+  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=07b870c21213848a4a5f99985d44b475&language=en-US&page=${app.page}
+`;
+  return apiUrl;
+}
+
 export const mainImg = "https://image.tmdb.org/t/p/w500";
 const mainContainer = document.getElementById("movies-container");
 
@@ -12,8 +25,16 @@ export const form = document.getElementById("form__banner");
 export const formInput = document.getElementById("form__banner-search");
 export const buttonBanner = document.getElementById("button_banner");
 
+const button_loadMore = document.getElementById("button_loadMore");
+console.log(button_loadMore);
+
 // Form EventListener
 export const formEventListener = form.addEventListener("submit", searchInfo);
+button_loadMore.addEventListener("click", loadNewData);
+
+function loadNewData() {
+  moviesApi(pageNumber());
+}
 
 //Functions
 export function searchInfo(e) {
