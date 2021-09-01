@@ -1,14 +1,12 @@
 // TMDB getting information  from the api
- import { loadNewData } from "./loadMore.js";
- loadNewData()
+import { loadNewData } from "./loadMore.js";
+loadNewData();
 
-
-export const apiKey = "07b870c21213848a4a5f99985d44b475";
+const apiKey = "07b870c21213848a4a5f99985d44b475";
 const mainUrl = "https://api.themoviedb.org/3";
 
 const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=07b870c21213848a4a5f99985d44b475&language=en-US&page=1
 `;
-
 
 export const mainImg = "https://image.tmdb.org/t/p/w500";
 const mainContainer = document.getElementById("movies-container");
@@ -20,12 +18,10 @@ export const buttonBanner = document.getElementById("button_banner");
 
 export const button_loadMore = document.getElementById("button_loadMore");
 
-
 // Form EventListener
-export const formEventListener = form.addEventListener("submit", searchInfo);
-
-
-
+if (form) {
+  form.addEventListener("submit", searchInfo);
+}
 
 //Functions
 export function searchInfo(e) {
@@ -128,7 +124,7 @@ function showMovies(data) {
               <h3 class="movie__info--title" data-id= "${movieId}">${title}</h3>
             </div>
             <div class="movie__date">
-             ${monthFormatReady} ${day},${year}
+             ${monthFormatReady} ${day}, ${year}
             </div>
             `;
     mainContainer.appendChild(movieCard);
@@ -160,4 +156,11 @@ function clearHtml() {
   mainContainer.innerHTML = "";
 }
 
+//Footer
+const footer = document.getElementById("footer");
+var currentDate = new Date();
+var currentYear = currentDate.getFullYear();
 
+footer.innerHTML = `
+<p>Design by Jonathan Pinto © ${currentYear}</p>
+`;

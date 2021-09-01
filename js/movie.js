@@ -1,13 +1,5 @@
 // // Variables
-import {
-  mainImg,
-  getColor,
-  form,
-  formInput,
-  buttonBanner,
-  button_loadMore,
-  searchInfo,
-} from "./app.js";
+import { mainImg, getColor } from "./app.js";
 const movieCardContainer = document.getElementById("movieSelected-container");
 const trailerContainerdiv = document.getElementById("trailer-container");
 
@@ -84,9 +76,6 @@ function showMovieSelected(data) {
       return "Dic";
     }
   }
-
-  const hideBanner = (document.getElementById("welcome-banner").style.display =
-    "none");
 
   const movieSelectedCard = document.createElement("div");
 

@@ -29,6 +29,10 @@ body {
   margin-left: 34px;
 }
 
+.header-logo:hover {
+  cursor: pointer;
+}
+
 div.welcome-banner {
   height: 284px;
   background-color: rgb(0, 47, 85);
@@ -94,6 +98,10 @@ div.welcome-banner {
   margin-left: -50px;
 }
 
+.button_banner:hover {
+  cursor: pointer;
+}
+
 .popular-title {
   margin-left: 27px;
   margin-top: 27px;
@@ -126,6 +134,11 @@ div.welcome-banner {
   padding: 0;
   text-align: center;
   border-radius: 8px;
+}
+
+.movie__img:hover,
+.movie__info--title:hover {
+  cursor: pointer;
 }
 
 .movie__description {
@@ -259,7 +272,32 @@ div.welcome-banner {
   padding: 30px;
 }
 
+.loadMore__container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.button_loadMore {
+  background-color: #16a5c9;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  height: min-content;
+  padding: 0;
+  width: 150px;
+  margin: 30px;
+}
+
+.button_loadMore:hover {
+  cursor: pointer;
+}
+
 .footer {
   background-color: #032541;
-  height: 200px;
+  /* height: 200px; */
+  height: 100px;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
 }
