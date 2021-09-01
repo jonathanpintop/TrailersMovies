@@ -5,10 +5,10 @@ import {
   form,
   formInput,
   buttonBanner,
-  formEventListener,
+  button_loadMore,
   searchInfo,
 } from "./app.js";
-const MovieCardContainer = document.getElementById("movieSelected-container");
+const movieCardContainer = document.getElementById("movieSelected-container");
 const trailerContainerdiv = document.getElementById("trailer-container");
 
 const urlSearchParams = new URLSearchParams(window.location.search);
@@ -30,6 +30,7 @@ function movieSelectedApi(url) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      console.log("data movies", data);
       showMovieSelected(data);
     });
 }
@@ -37,34 +38,97 @@ function movieSelectedApi(url) {
 function showMovieSelected(data) {
   const { title, poster_path, vote_average, overview, release_date, id } = data;
 
-  const hideBanner = document.getElementById("welcome-banner").style.display = "none";
+  let date = new Date(release_date);
+
+  const month = date.getMonth();
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  const monthFormatReady = monthFormat(month);
+
+  function monthFormat(month) {
+    if (month === 1) {
+      return "Jan";
+    }
+    if (month === 2) {
+      return "Feb";
+    }
+    if (month === 3) {
+      return "Mar";
+    }
+    if (month === 4) {
+      return "Apr";
+    }
+    if (month === 5) {
+      return "May";
+    }
+    if (month === 6) {
+      return "Jun";
+    }
+    if (month === 7) {
+      return "Jul";
+    }
+    if (month === 8) {
+      return "Aug";
+    }
+    if (month === 9) {
+      return "Sept";
+    }
+    if (month === 10) {
+      return "Oct";
+    }
+    if (month === 11) {
+      return "Nov";
+    }
+    if (month === 12) {
+      return "Dic";
+    }
+  }
+
+  const hideBanner = (document.getElementById("welcome-banner").style.display =
+    "none");
 
   const movieSelectedCard = document.createElement("div");
 
+  const imgSelectedUrl = mainImg + poster_path;
+
   movieSelectedCard.innerHTML = ` 
-
-
-<img data-id= "${id}" class="movie__img--selected"  src="${
+  <div id= "movie__selected_container">
+<img data-id= "${id}" class="movie__img--selected"  id="movie__img--selected"  src="${
     mainImg + poster_path
   }" alt="${title}">
 
 
 <div class= "infoMovie__wrapper"  id= "infoMovie__wrapper">
-  <h2 class= "infoMovie__title"  id= "infoMovie__title">${title}</h2>
+  <h2 class= "infoMovie__title"  id= "infoMovie__title">${title}<span class="infoMovie__title--span">(${year})</span></h2>
+  <p class= "infoMovie__date"  id= "infoMovie__date">${monthFormatReady}/${day}/${year}</p>
 
-  <span class="${getColor(vote_average)}">${vote_average}</span>
+  <span class="${getColor(
+    vote_average
+  )}__movie--selected">${vote_average}</span>
+
+  <h3 class="overview__title">Overview</h3>
+  
+
+
 
 
   <p class= "infoMovie__overview"  id= "infoMovie__overview">${overview}</p>
-
+</div>
 
 </div>
 
-
-
 `;
 
-  MovieCardContainer.appendChild(movieSelectedCard);
+  movieCardContainer.appendChild(movieSelectedCard);
+
+  // MOVIE COVER
+
+  //   const movieSelectedContainer = document.getElementById('movie__selected_container');
+
+  //  movieCardContainer.style.cssText+=`background-image:url(${imgSelectedUrl})`
+  //  movieCardContainer.style.backgroundSize = "cover"
+  //  movieCardContainer.style.backgroundPosition = "center"
 }
 
 // Show Trailer

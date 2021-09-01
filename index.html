@@ -9,11 +9,14 @@
   </head>
   <body>
     <header class="header" id="header">
-      <img class="header-logo" id="header-logo"
+      <img
+        class="header-logo"
+        id="header-logo"
         src="/assets/logo.svg"
         alt="The Movie Database (TMDb)"
         width="154"
         height="20"
+        onclick="window.location.href='index.html'"
       />
       <form class="form" id="form">
         <input class="header__search" type="text" placeholder="search" />
@@ -22,22 +25,25 @@
 
     <div class="welcome-banner">
       <div id="welcome-banner--texts">
-          <h2 id="welcome-banner--title">Welcome.</h2>
-          <h3 id="welcome-banner--text">Millions of movies, TV shows and people to discover. Explore now.</h3>
-          <form class="form__banner" id="form__banner">
-            <input
-              id="form__banner-search"
-              type="text"
-              placeholder="Search for a movie, tv show, person ...."
-            />
-            <input id="button_banner" type="submit" value="Search" >
-          </form>
+        <h2 id="welcome-banner--title">Welcome.</h2>
+        <h3 id="welcome-banner--text">
+          Millions of movies, TV shows and people to discover. Explore now.
+        </h3>
+        <form class="form__banner" id="form__banner">
+          <input
+            id="form__banner-search"
+            type="text"
+            placeholder="Search for a movie, tv show, person ...."
+          />
+          <input class="button_banner" id="button_banner" type="submit" value="Search" />
+        </form>
       </div>
     </div>
-    <h2 id="popular-title">Popular Movies</h2>
+    <h2 id="popular-title" class="popular-title">Popular Movies</h2>
     <main class="movies-container" id="movies-container"></main>
-   <button id="button_loadMore" class="button_loadMore">LOAD MORE</button>
+    <button id="button_loadMore" class="button_loadMore">LOAD MORE</button>
     <footer class="footer">&copy; Copyright 2021 HTML.am</footer>
   </body>
   <script src="js/app.js" type="module"></script>
+  <script src="js/loadMore.js" type="module"></script>
 </html>
